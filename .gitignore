@@ -13,4 +13,4 @@ storage.db
 *.crt
 media
 dist
-django_sms_templates.egg-info
+django_mp_sms_templates.egg-info
