@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-20 07:30+0000\n"
+"POT-Creation-Date: 2018-07-23 09:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,21 +19,17 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: sms_templates/__init__.py:8
-msgid "SMS templates"
+#: sms_templates/__init__.py:8 sms_templates/models.py:30
+msgid "SMS Templates"
 msgstr "СМС шаблони"
 
-#: sms_templates/admin.py:46
-msgid "Send"
-msgstr "Надіслати"
-
-#: sms_templates/admin.py:48
-msgid "Actions"
-msgstr "Дії"
-
-#: sms_templates/admin.py:66
+#: sms_templates/admin.py:55
 msgid "SMS was sent"
 msgstr "СМС було надіслано"
+
+#: sms_templates/admin.py:66
+msgid "Actions"
+msgstr "Дії"
 
 #: sms_templates/models.py:8
 msgid "Name"
@@ -63,10 +59,21 @@ msgstr "Плейсхолдери"
 msgid "SMS Template"
 msgstr "СМС шаблон"
 
-#: sms_templates/models.py:30
-msgid "SMS Templates"
-msgstr "СМС шаблони"
+#: sms_templates/templates/sms_templates/list_item_actions.html:7
+msgid "Send"
+msgstr "Надіслати"
+
+#: sms_templates/templates/sms_templates/list_item_actions.html:13
+msgid "Edit"
+msgstr "Редагувати"
+
+#: sms_templates/templates/sms_templates/list_item_actions.html:19
+msgid "Delete"
+msgstr "Видалити"
 
 #: sms_templates/templates/sms_templates/send_sms.html:28
 msgid "Send SMS"
 msgstr "Надіслати СМС"
+
+#~ msgid "SMS templates"
+#~ msgstr "СМС шаблони"

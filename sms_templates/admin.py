@@ -2,11 +2,12 @@
 from importlib import import_module
 
 from django.apps import apps
-from django.conf.urls import url
+from django.urls import path
 from django.contrib import admin
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import get_object_or_404, render, redirect
+from django.template.loader import render_to_string
 
 try:
     from django.core.urlresolvers import reverse_lazy
@@ -30,28 +31,16 @@ def _get_sms_template_admin_base_class():
 
 class SMSTemplateAdmin(_get_sms_template_admin_base_class()):
 
-    list_display = ['name', 'slug', 'send_sms_link']
+    list_display = ['name', 'slug', 'get_item_actions']
     search_fields = ['name', 'slug', 'recipients', 'text']
 
     def get_readonly_fields(self, request, obj=None):
         return ['placeholders'] if obj else []
 
-    def send_sms_link(self, item):
-        html = """
-            <a class="btn btn-primary btn-block pull-right" href="{}">
-                <i class="fa fa-upload"></i> {}
-            </a>
-        """
-        return html.format(
-            reverse_lazy('admin:send-sms', args=[item.id]), _('Send'))
-
-    send_sms_link.short_description = _('Actions')
-    send_sms_link.allow_tags = True
-
     def get_urls(self):
 
         return [
-            url(r'^(.+)/send/$', self.send_sms_template, name='send-sms'),
+            path('<int:object_id>/send/', self.send_sms_template, name='send-sms'),
         ] + super(SMSTemplateAdmin, self).get_urls()
 
     def send_sms_template(self, request, object_id):
@@ -67,6 +56,14 @@ class SMSTemplateAdmin(_get_sms_template_admin_base_class()):
             return redirect('admin:smstemplates_smstemplate_changelist')
 
         return render(request, 'sms_templates/send_sms.html', {'form': form})
+
+    def get_item_actions(self, item):
+        return render_to_string('sms_templates/list_item_actions.html', {
+            'object': item
+        })
+
+    get_item_actions.allow_tags = True
+    get_item_actions.short_description = _('Actions')
 
 
 admin.site.register(SMSTemplate, SMSTemplateAdmin)

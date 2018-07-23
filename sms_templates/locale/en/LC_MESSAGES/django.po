@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-20 07:30+0000\n"
+"POT-Creation-Date: 2018-07-23 09:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: sms_templates/__init__.py:8
-msgid "SMS templates"
+#: sms_templates/__init__.py:8 sms_templates/models.py:30
+msgid "SMS Templates"
 msgstr ""
 
-#: sms_templates/admin.py:46
-msgid "Send"
-msgstr ""
-
-#: sms_templates/admin.py:48
-msgid "Actions"
+#: sms_templates/admin.py:55
+msgid "SMS was sent"
 msgstr ""
 
 #: sms_templates/admin.py:66
-msgid "SMS was sent"
+msgid "Actions"
 msgstr ""
 
 #: sms_templates/models.py:8
@@ -61,8 +57,16 @@ msgstr ""
 msgid "SMS Template"
 msgstr ""
 
-#: sms_templates/models.py:30
-msgid "SMS Templates"
+#: sms_templates/templates/sms_templates/list_item_actions.html:7
+msgid "Send"
+msgstr ""
+
+#: sms_templates/templates/sms_templates/list_item_actions.html:13
+msgid "Edit"
+msgstr ""
+
+#: sms_templates/templates/sms_templates/list_item_actions.html:19
+msgid "Delete"
 msgstr ""
 
 #: sms_templates/templates/sms_templates/send_sms.html:28
