@@ -9,5 +9,3 @@ class SMSTemplatesConfig(AppConfig):
 
 
 default_app_config = 'sms_templates.SMSTemplatesConfig'
-
-__version__ = '1.2'
