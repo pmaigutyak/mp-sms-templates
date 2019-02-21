@@ -53,7 +53,7 @@ class SMSTemplateAdmin(_get_sms_template_admin_base_class()):
             data = form.cleaned_data
             send_sms(data['text'], data['recipients'])
             messages.success(request, _('SMS was sent'))
-            return redirect('admin:smstemplates_smstemplate_changelist')
+            return redirect('admin:sms_templates_smstemplate_changelist')
 
         return render(request, 'sms_templates/send_sms.html', {'form': form})
 
